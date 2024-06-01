@@ -12,9 +12,40 @@ document.addEventListener("DOMContentLoaded", function () {
       textDivs.forEach((d) => d.classList.remove("active"));
 
       this.classList.add("active");
-
       const newImage = this.getAttribute("data-image");
       mainImage.src = newImage;
     });
   });
 });
+
+function openExternalLink() {
+  window.open("https://www.fylehq.com/", "_blank");
+}
+
+const page2ImagesContainer = document.querySelector(".page2-images");
+
+setInterval(() => {
+  const imageContainers = Array.from(
+    page2ImagesContainer.querySelectorAll(".image-container")
+  );
+
+  const firstContainer = imageContainers.shift();
+  page2ImagesContainer.appendChild(firstContainer);
+}, 3000);
+
+const carouselIconsContainer = document.querySelector(".carousel-icons");
+
+const carouselIcons = Array.from(
+  carouselIconsContainer.querySelectorAll("img")
+);
+
+let currentIndex = 0;
+
+setInterval(() => {
+  carouselIcons.forEach((icon, index) => {
+    const newIndex = (index + 1) % carouselIcons.length;
+    icon.style.order = (newIndex + currentIndex) % carouselIcons.length;
+  });
+
+  currentIndex = (currentIndex + 1) % carouselIcons.length;
+}, 3000);
