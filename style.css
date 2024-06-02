@@ -27,11 +27,13 @@ body {
 }
 
 .page1 .page1-left {
+  opacity: 0;
   width: 614px;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  animation: fadeIn 2s forwards;
 }
 
 .page1 .page1-left h4 {
@@ -67,6 +69,19 @@ body {
   background-color: #fff;
   color: #ff3147;
   border: 1px solid #ff3147;
+}
+.page1 .page1-right {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Dialogue Box */
