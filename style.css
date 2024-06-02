@@ -11,8 +11,10 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
+
+/* Page 1 */
 
 .page1 {
   display: flex;
@@ -47,7 +49,7 @@ body {
 }
 
 .page1 .page1-left p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .page1 .page1-left button {
@@ -67,11 +69,130 @@ body {
   border: 1px solid #ff3147;
 }
 
-.page1 .page1-right img {
-  width: 487px;
-  height: 737px;
+/* Dialogue Box */
+
+.popup .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
 }
 
+.popup .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 450px;
+  height: 362px;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.contact-form {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-form h2 {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-form input[type="email"],
+.contact-form input[type="text"] {
+  font-size: 16px;
+  width: calc(100% - 5px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+.contact-form label {
+  font-size: 14px;
+}
+.contact-form .name-fields {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.contact-form .name-fields input[type="text"] {
+  width: calc(50% - 10px);
+}
+
+.contact-form label {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  margin-bottom: 20px;
+  color: gray;
+}
+
+.contact-form input[type="checkbox"] {
+  margin-bottom: 18px;
+  margin-right: 10px;
+  accent-color: #ff2d55;
+}
+
+.checkbox {
+  border-color: #ff2d55;
+}
+
+.contact-form button {
+  background-color: #ff2d55;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 0px;
+}
+
+.contact-form button:hover {
+  background-color: #e02747;
+}
+
+.popup .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  background: #e02747;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup.active .overlay {
+  display: block;
+}
+
+.popup.active .content {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* page 2 */
 .page2 {
   height: 100vh;
   width: 100vw;
@@ -79,6 +200,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #fafafa;
 }
 
 .page2 .page2-top {
@@ -192,7 +314,7 @@ body {
 .carousel-icons img {
   transition: order 0.5s ease;
 }
-
+/* page 3 */
 .page3 {
   width: 100vw;
   height: 50vh;
@@ -232,6 +354,7 @@ body {
   width: 70px;
 }
 
+/* page 4 */
 .page4 {
   height: 100vh;
   width: 100vw;
@@ -281,7 +404,7 @@ body {
 
 .project-text .text.active {
   background-color: #ff3147;
-  z-index: 10;
+  /* z-index: 10; */
   color: #fff;
 }
 
@@ -295,6 +418,7 @@ body {
   font-size: 16px;
 }
 
+/* page 5 */
 .page5 {
   height: 50vh;
   width: 100vw;
@@ -355,6 +479,7 @@ body {
   font-weight: 300;
 }
 
+/* page 6 */
 .page6 {
   height: 55vh;
   width: 100%;
@@ -419,6 +544,7 @@ p.author {
   font-weight: 300;
 }
 
+/* page 7 */
 .page7 {
   height: 310px;
   width: 100vw;
@@ -433,6 +559,7 @@ p.author {
   width: 1170px;
 }
 
+/* Media Queries */
 @media (max-height: 900px) {
   .page1 .page1-right img {
     width: 457px;
@@ -805,5 +932,10 @@ p.author {
     height: auto;
     width: 370px;
     object-fit: cover;
+  }
+  .popup .content {
+    width: 350px;
+    height: 380px;
+    padding: 10px;
   }
 }

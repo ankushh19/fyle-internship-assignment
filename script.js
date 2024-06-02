@@ -4,6 +4,18 @@ const locoScroll = new LocomotiveScroll({
   smooth: true,
 });
 
+const body = document.getElementById("container");
+const closeBtn = document.getElementById("close-btn");
+
+closeBtn.addEventListener("click", function () {
+  body.style.display = "block";
+});
+
+function togglePopup() {
+  body.style.display = "none";
+  document.getElementById("popup-1").classList.toggle("active");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const textDivs = document.querySelectorAll(".text");
   const mainImage = document.getElementById("main-image");

@@ -21,7 +21,7 @@
             Pellentesque vitae ante at elit fringilla ac at purus, Morbi sed
             lacus nec risus finibus feugiat et fermentum
           </p>
-          <button>Contact Us</button>
+          <button onclick="togglePopup()">Contact Us</button>
         </div>
         <div class="page1-right">
           <img src="./assets/hero.png" alt="woman-with-candle" />
@@ -254,6 +254,50 @@
       </div>
       <div class="page7">
         <img src="./assets/footer.png" alt="footer-icon" />
+      </div>
+    </div>
+    <div class="popup" id="popup-1">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="close-btn" id="close-btn" onclick="togglePopup()">
+          &times;
+        </div>
+        <div class="contact-form">
+          <h2>Talk to us</h2>
+          <form>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Work email*"
+              required
+            />
+
+            <div class="name-fields">
+              <input
+                type="text"
+                id="firstname"
+                name="first-name"
+                placeholder="First name*"
+                required
+              />
+
+              <input
+                type="text"
+                id="lastname"
+                name="last-name"
+                placeholder="Last name*"
+                required
+              />
+            </div>
+            <label>
+              <input type="checkbox" id="checkbox" required />
+              I agree to Fyle's terms and conditions, and provide consent to
+              send me communication.
+            </label>
+            <button type="submit">Contact Us</button>
+          </form>
+        </div>
       </div>
     </div>
 
